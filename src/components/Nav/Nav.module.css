@@ -1,14 +1,4 @@
-.nav {
+.Nav {
   grid-area: nav;
-  background-color: #f5f6fa;
-}
-
-.nav__list {
-  list-style-type: none;
-  padding-left: 20px;
-}
-
-.nav__item {
-  color: #353b48;
-  text-decoration: none;
+  height: max-content;
 }

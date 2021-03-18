@@ -1,15 +1,18 @@
 import './App.css';
 import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
-import Profile from './components/Profile/Profile';
+import Content from './components/Content/Content';
+import { BrowserRouter } from 'react-router-dom';
 
-const App = function() {
+const App = function(props) {
   return (
-    <div className="appWrapper">
-      <Header />
-      <Nav />
-      <Profile />
-    </div>
+    <BrowserRouter>
+      <div className="appWrapper">
+        <Header />
+        <Nav />
+        <Content data={props.data}/>
+      </div>
+    </BrowserRouter>
   );
 }
 

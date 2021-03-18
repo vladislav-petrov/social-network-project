@@ -1,0 +1,32 @@
+.Dialogs {
+  background-color: #fff;
+  display: grid;
+
+  grid-template-areas:
+  "dialogsNames dialogsMessages";
+
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.Dialogs_Persons {
+  grid-area: dialogsNames;
+  height: max-content;
+  background-color: #f5f6fa;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.Dialogs_Messages {
+  grid-area: dialogsMessages;
+  position: relative;
+  background-color: #f5f6fa;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}

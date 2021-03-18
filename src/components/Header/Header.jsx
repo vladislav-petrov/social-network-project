@@ -1,12 +1,13 @@
 import classes from './Header.module.css';
+import logo from '../../img/logo.png';
 
 const Header = function() {
   return (
-    <header className={classes.header}>
+    <header className={classes.Header}>
       <img
-        className={classes.header__image}
-        src="logo192.png"
-        alt="React logo"
+        className={classes.Header_Image}
+        src={logo}
+        alt="Logo"
       />
     </header>
   );

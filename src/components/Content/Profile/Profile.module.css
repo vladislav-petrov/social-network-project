@@ -1,0 +1,61 @@
+.Profile {
+  background-color: #fff;
+}
+
+.Profile_UserInfo {
+  display: grid;
+
+  grid-template-areas:
+  "profileUserImage profileUserName"
+  "profileUserImage profileUserDescription";
+
+  grid-template-rows: 30px 200px;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+}
+
+.Profile_UserImage {
+  grid-area: profileUserImage;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: 50% 20%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.Profile_UserName {
+  grid-area: profileUserName;
+  font-size: 150%;
+}
+
+.Profile_UserDescription {
+  grid-area: profileUserDescription;
+  display: grid;
+  background-color: #f5f6fa;
+  border-radius: 5px;
+
+  grid-template-areas:
+  "userDescriptionItem userDescriptionValue";
+  
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.UserDescription_Item {
+  grid-area: userDescriptionItem;
+  margin-left: 10px;
+}
+
+.UserDescription_Value {
+  grid-area: userDescriptionValue;
+  margin-left: 10px;
+}

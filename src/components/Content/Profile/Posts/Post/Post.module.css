@@ -1,0 +1,61 @@
+.Post {
+  margin: 20px 20px;
+  padding: 10px 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.Post_Info {
+  display: grid;
+
+  grid-template-areas:
+  "infoAuthorImage infoTextInfo";
+
+  grid-template-rows: 60px;
+  grid-template-columns: 60px 1fr;
+  gap: 10px;
+}
+
+.Info_AuthorImage {
+  grid-area: infoAuthorImage;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: 50% 20%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.Info_TextInfo {
+  grid-area: infoTextInfo;
+}
+
+.TextInfo_AuthorName {
+  display: block;
+  line-height: 22px;
+  margin-top: 8px;
+  color: #353b48;
+}
+
+.TextInfo_PostDate {
+  display: block;
+  line-height: 22px;
+  margin-bottom: 8px;
+  color: #636e72;
+  font-size: 95%;
+}
+
+.Post_Text {
+  color: #353b48;
+}
+
+.Post_Likes {
+  color: #c44569;
+}

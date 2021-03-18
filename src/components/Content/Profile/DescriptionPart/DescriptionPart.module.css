@@ -1,0 +1,12 @@
+.DescriptionPart {
+  display: block;
+  margin-top: 8px;
+}
+
+.DescriptionPart_Item {
+  color: #636e72;
+}
+
+.DescriptionPart_Value {
+  color: #353b48;
+}

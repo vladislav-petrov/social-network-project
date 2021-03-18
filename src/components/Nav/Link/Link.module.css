@@ -1,0 +1,17 @@
+.Link {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 0px;
+  text-decoration: none;
+  color: #353b48;
+  padding-left: 15%;
+  width: 85%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.Link__active {
+  background-color: #82ccdd7a;
+}
