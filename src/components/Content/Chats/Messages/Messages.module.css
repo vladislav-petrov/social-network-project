@@ -1,17 +1,17 @@
-.Dialogs {
+.Messages {
   background-color: #fff;
   display: grid;
 
   grid-template-areas:
-  "dialogsNames dialogsMessages";
+  "messagesList"
+  "messagesForm";
 
-  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
   gap: 20px;
 }
 
-.Dialogs_Persons {
-  grid-area: dialogsNames;
-  height: max-content;
+.Messages_List {
+  grid-area: messagesList;
   background-color: #f5f6fa;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -20,9 +20,9 @@
   -o-border-radius: 5px;
 }
 
-.Dialogs_Messages {
-  grid-area: dialogsMessages;
-  position: relative;
+.Messages_Form {
+  grid-area: messagesForm;
+  padding: 20px 10px;
   background-color: #f5f6fa;
   border-radius: 5px;
   -webkit-border-radius: 5px;

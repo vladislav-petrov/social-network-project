@@ -1,5 +1,5 @@
 .Post {
-  margin: 20px 20px;
+  margin: 20px 10px;
   padding: 10px 10px;
   background-color: #fff;
   border-radius: 5px;
@@ -13,7 +13,7 @@
   display: grid;
 
   grid-template-areas:
-  "infoAuthorImage infoTextInfo";
+  "postInfoAuthorImage postInfoTextInfo";
 
   grid-template-rows: 60px;
   grid-template-columns: 60px 1fr;
@@ -21,7 +21,7 @@
 }
 
 .Info_AuthorImage {
-  grid-area: infoAuthorImage;
+  grid-area: postInfoAuthorImage;
   width: 60px;
   height: 60px;
   object-fit: cover;
@@ -34,7 +34,7 @@
 }
 
 .Info_TextInfo {
-  grid-area: infoTextInfo;
+  grid-area: postInfoTextInfo;
 }
 
 .TextInfo_AuthorName {

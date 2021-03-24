@@ -1,19 +1,19 @@
-.Posts {
-  grid-area: profilePosts;
-  height: max-content;
+.Chats {
+  background-color: #fff;
   display: grid;
 
   grid-template-areas:
-  "postsForm"
-  "postsList";
+  "chatsPersons chatsMessages";
 
-  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 2fr;
   gap: 20px;
 }
 
-.Posts_Form {
-  grid-area: postsForm;
-  padding: 20px 10px;
+.Chats_Persons {
+  grid-area: chatsPersons;
+  position: relative;
+  height: max-content;
+  min-height: 340px;
   background-color: #f5f6fa;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -22,11 +22,12 @@
   -o-border-radius: 5px;
 }
 
-.Posts_List {
-  grid-area: postsList;
+.Chats_Messages {
+  grid-area: chatsMessages;
   position: relative;
-  min-height: 194px;
   background-color: #f5f6fa;
+  height: max-content;
+  min-height: 340px;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;

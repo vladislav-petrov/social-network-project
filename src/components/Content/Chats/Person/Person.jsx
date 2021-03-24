@@ -12,7 +12,7 @@ const Person = function(props) {
       <NavLink
         className={classes.Person_Name}
         activeClassName={classes.Person_Name__active}
-        to={`/dialogs/${props.id}`}
+        to={`/chats/id${props.id}`}
       >
         {props.name}
       </NavLink>

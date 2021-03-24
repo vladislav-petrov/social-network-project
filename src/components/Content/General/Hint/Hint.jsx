@@ -1,9 +1,9 @@
 import classes from './Hint.module.css';
 
-const Hint = function() {
+const Hint = function(props) {
   return (
     <span className={classes.Hint}>
-      Select a dialog to start messaging
+      {props.text}
     </span>
   );
 }

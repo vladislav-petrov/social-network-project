@@ -1,36 +1,44 @@
 import classes from './Posts.module.css';
+import Form from './Form/Form';
 import Post from './Post/Post';
+import Hint from '../../General/Hint/Hint';
 
 const Posts = function(props) {
+  const user = props.user;
+  // const userActive = props.state.users.find((user) => user.userActive);
+
   return (
     <div className={classes.Posts}>
-      <div className={classes.Posts_Template}></div>
-      <form className={classes.Posts_Form}>
-        <label className={classes.Form_Label}>
-          What's new?
-        </label>
-        <textarea className={classes.Form_Text} />
-        <input className={classes.Form_Submit} type="submit" value="Post" />
-      </form>
+      <div className={classes.Posts_Form}>
+        <Form
+          user={user}
+          state={props.state}
+          addPost={props.addPost}
+        />
+      </div>
       <div className={classes.Posts_List}>
         {
-          props.data.posts.map((post, index) => {
-            return (
-              <Post
-                key={(index + 1).toString()}
+          user.postsData.posts.length ? (
+            user.postsData.posts.map((post) => {
+              const author = props.state.users.find((user) => user.userData.id === post.authorId);
 
-                name={post.id === '1' ? `${props.data.userData.firstName} ${props.data.userData.lastName}` : `${props.data.friendsData.find(friend => friend.id === post.id).firstName} ${props.data.friendsData.find(friend => friend.id === post.id).lastName}`}
-
-                imageURL={post.id === '1' ? props.data.userData.imageURL : props.data.friendsData.find(friend => friend.id === post.id).imageURL}
-
-                imageAlt={post.id === '1' ? props.data.userData.imageAlt : props.data.friendsData.find(friend => friend.id === post.id).imageAlt}
-
-                date={post.date}
-                text={post.text}
-                likes={post.likes}
-              />
-            );
-          })
+              return (
+                <Post
+                  key={post.id}
+                  authorName={`${author.userData.firstName} ${author.userData.lastName}`}
+                  authorImageURL={author.userData.imageURL}
+                  authorImageAlt={author.userData.imageAlt}
+                  date={post.date}
+                  text={post.text}
+                  likes={post.likes}
+                />
+              );
+            })
+          ) : (
+            <Hint
+              text="There are no posts here yet"
+            />
+          )
         }
       </div>
     </div>

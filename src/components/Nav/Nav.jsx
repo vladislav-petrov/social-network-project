@@ -1,13 +1,13 @@
 import classes from './Nav.module.css';
 import Link from './Link/Link';
 
-const Nav = function() {
+const Nav = function(props) {
   return (
     <nav className={classes.Nav}>
       {
         [
           'Profile',
-          'Dialogs',
+          'Chats',
           'News',
           'Music',
           'Settings'
@@ -16,6 +16,8 @@ const Nav = function() {
             <Link
               key={(index + 1).toString()}
               section={value}
+              state={props.state}
+              changeGoToId={props.changeGoToId}
             />
           );
         })
