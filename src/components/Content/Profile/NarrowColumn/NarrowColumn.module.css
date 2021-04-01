@@ -1,0 +1,12 @@
+.NarrowColumn {
+  grid-area: contentProfileNarrowColumn;
+  display: grid;
+
+  grid-template-areas:
+  "profileNarrowColumnUserImage"
+  "profileNarrowColumnActions"
+  "profileNarrowColumnFeatures";
+
+  grid-template-rows: 250px minmax(160px, max-content) max-content;
+  gap: 20px;
+}

@@ -1,0 +1,11 @@
+.WideColumn {
+  grid-area: contentProfileWideColumn;
+  display: grid;
+
+  grid-template-areas:
+  "profileWideColumnUserInfo"
+  "profileWideColumnPosts";
+
+  grid-template-rows: max-content 1fr;
+  gap: 20px;
+}

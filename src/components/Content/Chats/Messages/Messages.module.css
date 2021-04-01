@@ -3,25 +3,15 @@
   display: grid;
 
   grid-template-areas:
-  "messagesList"
-  "messagesForm";
+  "chatsMessagesMessagesList"
+  "chatsMessagesForm";
 
   grid-template-rows: 1fr;
   gap: 20px;
 }
 
-.Messages_List {
-  grid-area: messagesList;
-  background-color: #f5f6fa;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-}
-
 .Messages_Form {
-  grid-area: messagesForm;
+  grid-area: chatsMessagesForm;
   padding: 20px 10px;
   background-color: #f5f6fa;
   border-radius: 5px;

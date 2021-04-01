@@ -1,10 +1,21 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import './index.css';
-import render from './render';
-import * as state from './redux/state';
+import App from './App';
+import store from './redux/store';
 
-render(
-  state.state,
-  state.addPost,
-  state.addMessage,
-  state.changeGoToId
-);
+const render = function() {
+  ReactDOM.render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <App store={store} />
+      </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+}
+
+store.subscribe(render);
+
+render();

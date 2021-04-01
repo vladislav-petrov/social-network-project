@@ -1,0 +1,9 @@
+.Friends {
+  background-color: #f5f6fa;
+  overflow: auto;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}

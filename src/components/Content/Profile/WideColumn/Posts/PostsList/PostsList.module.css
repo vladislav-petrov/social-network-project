@@ -1,0 +1,11 @@
+.PostsList {
+  grid-area: wideColumnPostsPostsList;
+  position: relative;
+  min-height: 194px;
+  background-color: #f5f6fa;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}

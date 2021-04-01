@@ -1,0 +1,12 @@
+.UserImage {
+  grid-area: profileNarrowColumnUserImage;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: 50% 20%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}

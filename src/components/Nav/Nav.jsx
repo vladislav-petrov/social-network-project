@@ -1,29 +1,31 @@
-import classes from './Nav.module.css';
-import Link from './Link/Link';
+import React from 'react';
+import style from './Nav.module.css';
+import LinkContainer from './LinkContainer/LinkContainer';
 
-const Nav = function(props) {
-  return (
-    <nav className={classes.Nav}>
-      {
-        [
-          'Profile',
-          'Chats',
-          'News',
-          'Music',
-          'Settings'
-        ].map((value, index) => {
-          return (
-            <Link
-              key={(index + 1).toString()}
-              section={value}
-              state={props.state}
-              changeGoToId={props.changeGoToId}
-            />
-          );
-        })
-      }
-    </nav>
-  );
+class Nav extends React.Component {
+  render() {
+    return (
+      <nav className={style.Nav}>
+        {
+          [
+            'Profile',
+            'Chats',
+            'News',
+            'Music',
+            'Settings'
+          ].map((value, index) => {
+            return (
+              <LinkContainer
+                key={(index + 1).toString()}
+                section={value}
+                // store={this.props.store}
+              />
+            );
+          })
+        }
+      </nav>
+    );
+  }
 }
 
 export default Nav;

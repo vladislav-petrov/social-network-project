@@ -1,11 +1,14 @@
-import classes from './Hint.module.css';
+import React from 'react';
+import style from './Hint.module.css';
 
-const Hint = function(props) {
-  return (
-    <span className={classes.Hint}>
-      {props.text}
-    </span>
-  );
+class Hint extends React.Component {
+  render() {
+    return (
+      <span className={style.Hint}>
+        {this.props.text}
+      </span>
+    );
+  }
 }
 
 export default Hint;

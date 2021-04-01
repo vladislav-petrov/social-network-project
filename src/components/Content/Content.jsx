@@ -1,31 +1,32 @@
-import classes from './Content.module.css';
+import React from 'react';
+import { Route } from 'react-router-dom';
+import style from './Content.module.css';
 import Profile from './Profile/Profile';
 import Chats from './Chats/Chats';
-import { Route } from 'react-router-dom';
 
-const Content = function(props) {
-  const id = props.state.goToId;
+class Content extends React.Component {
+  _getId() {
+    return this.props.store.getState().goToId;
+  }
 
-  return (
-    <div className={classes.Content}>
-      <Route
-        path={`/id${id}`}
-        render={(propsRoute) => <Profile {...propsRoute}
-          id={id}
-          state={props.state}
-          addPost={props.addPost}
-          changeGoToId={props.changeGoToId}
-        />}
-      />
-      <Route
-        path="/chats"
-        render={(propsRoute) => <Chats {...propsRoute}
-          state={props.state}
-          addMessage={props.addMessage}
-        />}
-      />
-    </div>
-  );
+  render() {
+    return (
+      <div className={style.Content}>
+        <Route
+          path={`/id${this._getId()}`}
+          render={(propsRoute) => <Profile {...propsRoute}
+            store={this.props.store}
+          />}
+        />
+        <Route
+          path='/chats'
+          render={(propsRoute) => <Chats {...propsRoute}
+            store={this.props.store}
+          />}
+        />
+      </div>
+    );
+  }
 }
 
 export default Content;

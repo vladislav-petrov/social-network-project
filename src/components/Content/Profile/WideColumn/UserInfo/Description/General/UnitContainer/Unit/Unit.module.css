@@ -1,0 +1,12 @@
+.Unit {
+  display: block;
+  margin: 10px 0;
+}
+
+.Item {
+  color: #636e72;
+}
+
+.Value {
+  color: #353b48;
+}

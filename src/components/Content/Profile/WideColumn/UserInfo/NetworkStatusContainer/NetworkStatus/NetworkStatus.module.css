@@ -1,0 +1,7 @@
+.NetworkStatus {
+  grid-area: wideColumnUserInfoNetworkStatus;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #636e72;
+}

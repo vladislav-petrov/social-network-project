@@ -1,0 +1,11 @@
+.FriendsOnline {
+  padding: 0 5px;
+  margin: 20px 0 10px 0;
+  overflow: auto;
+}
+
+.FriendsOnline_Header {
+  display: block;
+  margin: 0 0 10px 10px;
+  color: #636e72;
+}

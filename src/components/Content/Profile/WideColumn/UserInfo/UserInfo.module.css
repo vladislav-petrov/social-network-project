@@ -1,0 +1,12 @@
+.UserInfo {
+  grid-area: profileWideColumnUserInfo;
+  display: grid;
+
+  grid-template-areas:
+  "wideColumnUserInfoName wideColumnUserInfoNetworkStatus"
+  "wideColumnUserInfoDescription wideColumnUserInfoDescription";
+
+  grid-template-rows: 40px minmax(190px, max-content);
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}

@@ -1,0 +1,24 @@
+.Friend {
+  display: inline-block;
+  width: 80px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.Friend_Image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: 50% 20%;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.Friend_FirstName {
+  color: #353b48;
+  cursor: pointer;
+}

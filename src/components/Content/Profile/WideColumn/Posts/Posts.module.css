@@ -1,0 +1,23 @@
+.Posts {
+  grid-area: profileWideColumnPosts;
+  height: max-content;
+  display: grid;
+
+  grid-template-areas:
+  "wideColumnPostsForm"
+  "wideColumnPostsPostsList";
+
+  grid-template-rows: 1fr;
+  gap: 20px;
+}
+
+.Posts_Form {
+  grid-area: wideColumnPostsForm;
+  padding: 20px 10px;
+  background-color: #f5f6fa;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
