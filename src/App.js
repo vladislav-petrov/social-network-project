@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
-import Content from './components/Content/Content';
+import ContentContainer from './components/ContentContainer/ContentContainer';
 
 class App extends React.Component {
   render() {
@@ -12,11 +12,30 @@ class App extends React.Component {
         <div className="appWrapper">
           <Header />
           <Nav
-            store={this.props.store}
+            sections={[
+              {
+                id: '1',
+                name: 'Profile'
+              },
+              {
+                id: '2',
+                name: 'Chats'
+              },
+              {
+                id: '3',
+                name: 'News'
+              },
+              {
+                id: '4',
+                name: 'Music'
+              },
+              {
+                id: '5',
+                name: 'Settings'
+              }
+            ]}
           />
-          <Content
-            store={this.props.store}
-          />
+          <ContentContainer />
         </div>
       </BrowserRouter>
     );

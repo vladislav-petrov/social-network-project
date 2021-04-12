@@ -1,3 +1,5 @@
+import { cloneDeep } from 'lodash';
+
 const POST_ADDED = 'POST_ADDED';
 const MESSAGE_ADDED = 'MESSAGE_ADDED';
 
@@ -11,11 +13,23 @@ const initialState = [
       imageAlt: 'User',
       firstName: 'Elle',
       lastName: 'Fanning',
-      description: [
-        ['Birthday', 'April 9'],
-        ['Current city', 'Los Angeles'],
-        ['Relationship', 'Actively searching']
-      ]
+      descriptionData: {
+        idCurrent: '3',
+        description: [
+          {
+            id: '1',
+            partText: ['Birthday', 'April 9']
+          },
+          {
+            id: '2',
+            partText: ['Current city', 'Los Angeles']
+          },
+          {
+            id: '3',
+            partText: ['Relationship', 'Actively searching']
+          }
+        ]
+      }
     },
     friends: [
       '2',
@@ -207,10 +221,19 @@ const initialState = [
       imageAlt: 'User',
       firstName: 'Elliot',
       lastName: 'Alderson',
-      description: [
-        ['Birthday', 'September 17'],
-        ['Current city', 'New York City']
-      ]
+      descriptionData: {
+        idCurrent: '2',
+        description: [
+          {
+            id: '1',
+            partText: ['Birthday', 'September 17']
+          },
+          {
+            id: '2',
+            partText: ['Current city', 'New York City']
+          }
+        ]
+      }
     },
     friends: [
       '1',
@@ -263,11 +286,23 @@ const initialState = [
       imageAlt: 'User',
       firstName: 'Dakota',
       lastName: 'Fanning',
-      description: [
-        ['Birthday', 'February 23'],
-        ['Current city', 'Los Angeles'],
-        ['Relationship', 'Actively searching']
-      ]
+      descriptionData: {
+        idCurrent: '3',
+        description: [
+          {
+            id: '1',
+            partText: ['Birthday', 'February 23']
+          },
+          {
+            id: '2',
+            partText: ['Current city', 'Los Angeles']
+          },
+          {
+            id: '3',
+            partText: ['Relationship', 'Actively searching']
+          }
+        ]
+      }
     },
     friends: [
       '1',
@@ -320,11 +355,23 @@ const initialState = [
       imageAlt: 'User',
       firstName: 'Angela',
       lastName: 'Moss',
-      description: [
-        ['Birthday', 'February 27'],
-        ['Current city', 'New York City'],
-        ['Relationship', 'Actively searching']
-      ]
+      descriptionData: {
+        idCurrent: '3',
+        description: [
+          {
+            id: '1',
+            partText: ['Birthday', 'February 27']
+          },
+          {
+            id: '2',
+            partText: ['Current city', 'New York City']
+          },
+          {
+            id: '3',
+            partText: ['Relationship', 'Actively searching']
+          }
+        ]
+      }
     },
     friends: [
       '1',
@@ -377,9 +424,15 @@ const initialState = [
       imageAlt: 'User',
       firstName: 'Mr.',
       lastName: 'Robot',
-      description: [
-        ['Current city', 'New York City']
-      ]
+      descriptionData: {
+        idCurrent: '1',
+        description: [
+          {
+            id: '1',
+            partText: ['Current city', 'New York City']
+          }
+        ]
+      }
     },
     friends: [
       '1',
@@ -506,42 +559,44 @@ export const addMessageCreateAction = function(userId, userActiveId, messageText
 export const usersReducer = function(state = initialState, action) {
   switch (action.type) {
     case POST_ADDED: {
-      const user = state.find((user) => user.userData.id === action.userId);
-      const userActive = state.find((user) => user.userData.id === action.userActiveId);;
-    
-      user.postsData.idCurrent = (+user.postsData.idCurrent + 1).toString();
-    
-      user.postsData.posts.unshift({
-        id: user.postsData.idCurrent,
-        authorId: userActive.userData.id,
+      const stateCopy = cloneDeep(state);
+      const userCopy = stateCopy.find((user) => user.userData.id === action.userId);
+      const userActiveCopy = stateCopy.find((user) => user.userData.id === action.userActiveId);;
+
+      userCopy.postsData.idCurrent = (+userCopy.postsData.idCurrent + 1).toString();
+
+      userCopy.postsData.posts.unshift({
+        id: userCopy.postsData.idCurrent,
+        authorId: userActiveCopy.userData.id,
         date: getCurrentDate(),
         text: action.postText,
         likes: ''
       });
 
-      return state;
+      return stateCopy;
     }
     case MESSAGE_ADDED: {
-      const user = state.find((user) => user.userData.id === action.userId);
-      const userActive = state.find((user) => user.userData.id === action.userActiveId);
-      const userChat = user.chatsData.chats.find((chat) => chat.id === action.userActiveId);
-      const userActiveChat = userActive.chatsData.chats.find((chat) => chat.id === action.userId);
-    
-      if (userChat) {
+      const stateCopy = cloneDeep(state);
+      const userCopy = stateCopy.find((user) => user.userData.id === action.userId);
+      const userActiveCopy = stateCopy.find((user) => user.userData.id === action.userActiveId);
+      const userChatCopy = userCopy.chatsData.chats.find((chat) => chat.id === action.userActiveId);
+      const userActiveChatCopy = userActiveCopy.chatsData.chats.find((chat) => chat.id === action.userId);
+
+      if (userChatCopy) {
         const message = {
-          id: (+userChat.messagesData.idCurrent + 1).toString(),
+          id: (+userChatCopy.messagesData.idCurrent + 1).toString(),
           authorId: action.userActiveId,
           date: getCurrentDate(),
           text: action.messageText
         }
-    
-        userChat.messagesData.idCurrent = message.id;
-        userChat.messagesData.messages.push(message);
-        userActiveChat.messagesData.idCurrent = message.id;
-        userActiveChat.messagesData.messages.push(message);
+
+        userChatCopy.messagesData.idCurrent = message.id;
+        userChatCopy.messagesData.messages.push(message);
+        userActiveChatCopy.messagesData.idCurrent = message.id;
+        userActiveChatCopy.messagesData.messages.push(message);
       }
 
-      return state;
+      return stateCopy;
     }
     default: {
       return state;

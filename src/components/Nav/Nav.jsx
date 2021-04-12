@@ -7,18 +7,11 @@ class Nav extends React.Component {
     return (
       <nav className={style.Nav}>
         {
-          [
-            'Profile',
-            'Chats',
-            'News',
-            'Music',
-            'Settings'
-          ].map((value, index) => {
+          this.props.sections.map((section) => {
             return (
               <LinkContainer
-                key={(index + 1).toString()}
-                section={value}
-                // store={this.props.store}
+                key={section.id}
+                section={section.name}
               />
             );
           })
