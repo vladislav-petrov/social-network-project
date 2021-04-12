@@ -5,24 +5,24 @@ const MESSAGE_ADDED = 'MESSAGE_ADDED';
 
 const initialState = [
   {
-    userActive: true,
+    userActive: false,
     networkStatus: 'Online',
     userData: {
       id: '1',
-      imageURL: 'https://celebmafia.com/wp-content/uploads/2019/04/elle-fanning-photoshoot-for-teen-vogue-magazine-april-2019-2.jpg',
+      imageURL: 'https://images.pexels.com/photos/1680175/pexels-photo-1680175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
       imageAlt: 'User',
-      firstName: 'Elle',
-      lastName: 'Fanning',
+      firstName: 'James',
+      lastName: 'Pickford',
       descriptionData: {
         idCurrent: '3',
         description: [
           {
             id: '1',
-            partText: ['Birthday', 'April 9']
+            partText: ['Birthday', 'April 3']
           },
           {
             id: '2',
-            partText: ['Current city', 'Los Angeles']
+            partText: ['Current city', 'Dallas']
           },
           {
             id: '3',
@@ -35,7 +35,8 @@ const initialState = [
       '2',
       '3',
       '4',
-      '5'
+      '5',
+      '6'
     ],
     postsData: {
       idCurrent: '3',
@@ -46,13 +47,6 @@ const initialState = [
           date: 'April 12, 2020',
           text: 'Hi, how are you?',
           likes: '12'
-        },
-        {
-          id: '2',
-          authorId: '1',
-          date: 'April 10, 2020',
-          text: 'Going to gym',
-          likes: '10'
         },
         {
           id: '1',
@@ -75,19 +69,19 @@ const initialState = [
                 id: '1',
                 authorId: '2',
                 date: 'April 21, 2020',
-                text: 'Hello Friend'
+                text: 'Hello!'
               },
               {
                 id: '2',
                 authorId: '1',
                 date: 'April 22, 2020',
-                text: 'Oh hi Mark!'
+                text: 'Oh hi Olivia!'
               },
               {
                 id: '3',
                 authorId: '2',
                 date: 'April 22, 2020',
-                text: '...'
+                text: 'Glad to see you here!'
               }
             ]
           }
@@ -96,7 +90,7 @@ const initialState = [
           id: '3',
           userId: '3',
           messagesData: {
-            idCurrent: '3',
+            idCurrent: '2',
             messages: [
               {
                 id: '1',
@@ -109,12 +103,6 @@ const initialState = [
                 authorId: '1',
                 date: 'April 11, 2020',
                 text: 'Thanks!'
-              },
-              {
-                id: '3',
-                authorId: '3',
-                date: 'April 11, 2020',
-                text: 'Nice photo btw'
               }
             ]
           }
@@ -129,19 +117,19 @@ const initialState = [
                 id: '1',
                 authorId: '4',
                 date: 'April 10, 2020',
-                text: `Let's watch new season of Mr. Robot!`
+                text: `Hey, wanna hang out with me and Olivia tomorrow?`
               },
               {
                 id: '2',
                 authorId: '1',
                 date: 'April 14, 2020',
-                text: `Yeah, let's do it!`
+                text: `Yeah, sure!`
               },
               {
                 id: '3',
                 authorId: '4',
                 date: 'April 16, 2020',
-                text: 'Great!'
+                text: `Great! I'll call you later`
               }
             ]
           }
@@ -150,61 +138,52 @@ const initialState = [
           id: '5',
           userId: '5',
           messagesData: {
-            idCurrent: '9',
+            idCurrent: '4',
             messages: [
               {
                 id: '1',
                 authorId: '5',
                 date: 'April 9, 2020',
-                text: 'Hey'
+                text: 'Hey James'
               },
               {
                 id: '2',
                 authorId: '1',
                 date: 'April 11, 2020',
-                text: 'What?'
+                text: 'Hi!'
               },
               {
                 id: '3',
                 authorId: '5',
                 date: 'April 11, 2020',
-                text: 'Nothing...'
+                text: 'Wanna play football next week?'
               },
               {
                 id: '4',
-                authorId: '5',
-                date: 'April 12, 2020',
-                text: 'Hey'
-              },
-              {
-                id: '5',
                 authorId: '1',
                 date: 'April 12, 2020',
-                text: 'What?'
+                text: 'Yeah, why not'
+              }
+            ]
+          }
+        },
+        {
+          id: '6',
+          userId: '6',
+          messagesData: {
+            idCurrent: '2',
+            messages: [
+              {
+                id: '1',
+                authorId: '6',
+                date: 'April 10, 2020',
+                text: `Hi James! Long time no see...`
               },
               {
-                id: '6',
-                authorId: '5',
+                id: '2',
+                authorId: '1',
                 date: 'April 14, 2020',
-                text: 'Nothing...'
-              },
-              {
-                id: '7',
-                authorId: '5',
-                date: 'April 15, 2020',
-                text: 'Hey'
-              },
-              {
-                id: '8',
-                authorId: '1',
-                date: 'April 15, 2020',
-                text: 'What?'
-              },
-              {
-                id: '9',
-                authorId: '5',
-                date: 'April 15, 2020',
-                text: 'Nothing...'
+                text: `Yeah, I miss you so much...`
               }
             ]
           }
@@ -213,24 +192,24 @@ const initialState = [
     }
   },
   {
-    userActive: false,
+    userActive: true,
     networkStatus: 'Offline',
     userData: {
       id: '2',
-      imageURL: 'https://i.pinimg.com/originals/9a/54/af/9a54afe8c51013ee60e010c74fb4af65.png',
+      imageURL: 'https://images.pexels.com/photos/712521/pexels-photo-712521.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
       imageAlt: 'User',
-      firstName: 'Elliot',
-      lastName: 'Alderson',
+      firstName: 'Olivia',
+      lastName: 'Palmer',
       descriptionData: {
         idCurrent: '2',
         description: [
           {
             id: '1',
-            partText: ['Birthday', 'September 17']
+            partText: ['Birthday', 'September 9']
           },
           {
             id: '2',
-            partText: ['Current city', 'New York City']
+            partText: ['Current city', 'Austin']
           }
         ]
       }
@@ -239,7 +218,8 @@ const initialState = [
       '1',
       '3',
       '4',
-      '5'
+      '5',
+      '6'
     ],
     postsData: {
       idCurrent: '',
@@ -257,19 +237,19 @@ const initialState = [
                 id: '1',
                 authorId: '2',
                 date: 'April 21, 2020',
-                text: 'Hello Friend'
+                text: 'Hello!'
               },
               {
                 id: '2',
                 authorId: '1',
                 date: 'April 22, 2020',
-                text: 'Oh hi Mark!'
+                text: 'Oh hi Olivia!'
               },
               {
                 id: '3',
                 authorId: '2',
                 date: 'April 22, 2020',
-                text: '...'
+                text: 'Glad to see you here!'
               }
             ]
           }
@@ -282,16 +262,16 @@ const initialState = [
     networkStatus: 'Online',
     userData: {
       id: '3',
-      imageURL: 'https://celebmafia.com/wp-content/uploads/2017/03/dakota-fanning-photoshoot-for-jimmy-choo-spring-summer-2017-13.jpg',
+      imageURL: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
       imageAlt: 'User',
-      firstName: 'Dakota',
-      lastName: 'Fanning',
+      firstName: 'Matias',
+      lastName: 'Hook',
       descriptionData: {
         idCurrent: '3',
         description: [
           {
             id: '1',
-            partText: ['Birthday', 'February 23']
+            partText: ['Birthday', 'May 15']
           },
           {
             id: '2',
@@ -299,7 +279,7 @@ const initialState = [
           },
           {
             id: '3',
-            partText: ['Relationship', 'Actively searching']
+            partText: ['Relationship', 'Married']
           }
         ]
       }
@@ -308,7 +288,8 @@ const initialState = [
       '1',
       '2',
       '4',
-      '5'
+      '5',
+      '6'
     ],
     postsData: {
       idCurrent: '',
@@ -320,7 +301,7 @@ const initialState = [
           id: '1',
           userId: '1',
           messagesData: {
-            idCurrent: '3',
+            idCurrent: '2',
             messages: [
               {
                 id: '1',
@@ -333,12 +314,6 @@ const initialState = [
                 authorId: '1',
                 date: 'April 11, 2020',
                 text: 'Thanks!'
-              },
-              {
-                id: '3',
-                authorId: '3',
-                date: 'April 11, 2020',
-                text: 'Nice photo btw'
               }
             ]
           }
@@ -351,16 +326,16 @@ const initialState = [
     networkStatus: 'Online',
     userData: {
       id: '4',
-      imageURL: 'https://adultpaintbynumber.com/wp-content/uploads/2020/10/Angela-Moss-Mr-Robot-paint-by-numbers.jpg',
+      imageURL: 'https://images.pexels.com/photos/718978/pexels-photo-718978.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
       imageAlt: 'User',
-      firstName: 'Angela',
+      firstName: 'Audrey',
       lastName: 'Moss',
       descriptionData: {
         idCurrent: '3',
         description: [
           {
             id: '1',
-            partText: ['Birthday', 'February 27']
+            partText: ['Birthday', 'February 29']
           },
           {
             id: '2',
@@ -377,7 +352,8 @@ const initialState = [
       '1',
       '2',
       '3',
-      '5'
+      '5',
+      '6'
     ],
     postsData: {
       idCurrent: '',
@@ -395,19 +371,19 @@ const initialState = [
                 id: '1',
                 authorId: '4',
                 date: 'April 10, 2020',
-                text: `Let's watch new season of Mr. Robot!`
+                text: `Hey, wanna hang out with me and Olivia tomorrow?`
               },
               {
                 id: '2',
                 authorId: '1',
                 date: 'April 14, 2020',
-                text: `Yeah, let's do it!`
+                text: `Yeah, sure!`
               },
               {
                 id: '3',
                 authorId: '4',
                 date: 'April 16, 2020',
-                text: 'Great!'
+                text: `Great! I'll call you later`
               }
             ]
           }
@@ -420,10 +396,10 @@ const initialState = [
     networkStatus: 'Offline',
     userData: {
       id: '5',
-      imageURL: 'https://pyxis.nymag.com/v1/imgs/825/ae1/bcce427fc131cf1f95aede3d9764d31023-26-mr-robot.rsquare.w700.jpg',
+      imageURL: 'https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
       imageAlt: 'User',
-      firstName: 'Mr.',
-      lastName: 'Robot',
+      firstName: 'Gareth',
+      lastName: 'Watson',
       descriptionData: {
         idCurrent: '1',
         description: [
@@ -438,7 +414,8 @@ const initialState = [
       '1',
       '2',
       '3',
-      '4'
+      '4',
+      '6'
     ],
     postsData: {
       idCurrent: '',
@@ -450,65 +427,99 @@ const initialState = [
           id: '1',
           userId: '1',
           messagesData: {
-            idCurrent: '9',
+            idCurrent: '4',
             messages: [
               {
                 id: '1',
                 authorId: '5',
                 date: 'April 9, 2020',
-                text: 'Hey'
+                text: 'Hey James'
               },
               {
                 id: '2',
                 authorId: '1',
                 date: 'April 11, 2020',
-                text: 'What?'
+                text: 'Hi!'
               },
               {
                 id: '3',
                 authorId: '5',
                 date: 'April 11, 2020',
-                text: 'Nothing...'
+                text: 'Wanna play football next week?'
               },
               {
                 id: '4',
-                authorId: '5',
-                date: 'April 12, 2020',
-                text: 'Hey'
-              },
-              {
-                id: '5',
                 authorId: '1',
                 date: 'April 12, 2020',
-                text: 'What?'
-              },
-              {
-                id: '6',
-                authorId: '5',
-                date: 'April 14, 2020',
-                text: 'Nothing...'
-              },
-              {
-                id: '7',
-                authorId: '5',
-                date: 'April 15, 2020',
-                text: 'Hey'
-              },
-              {
-                id: '8',
-                authorId: '1',
-                date: 'April 15, 2020',
-                text: 'What?'
-              },
-              {
-                id: '9',
-                authorId: '5',
-                date: 'April 15, 2020',
-                text: 'Nothing...'
+                text: 'Yeah, why not'
               }
             ]
           }
         } 
+      ]
+    }
+  },
+  {
+    userActive: false,
+    networkStatus: 'Online',
+    userData: {
+      id: '6',
+      imageURL: 'https://images.pexels.com/photos/720327/pexels-photo-720327.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      imageAlt: 'User',
+      firstName: 'Tanya',
+      lastName: 'Morrigan',
+      descriptionData: {
+        idCurrent: '3',
+        description: [
+          {
+            id: '1',
+            partText: ['Birthday', 'June 20']
+          },
+          {
+            id: '2',
+            partText: ['Current city', 'London']
+          },
+          {
+            id: '3',
+            partText: ['Relationship', 'Actively searching']
+          }
+        ]
+      }
+    },
+    friends: [
+      '1',
+      '2',
+      '3',
+      '4',
+      '5'
+    ],
+    postsData: {
+      idCurrent: '',
+      posts: []
+    },
+    chatsData: {
+      chats: [
+        {
+          id: '1',
+          userId: '1',
+          messagesData: {
+            idCurrent: '2',
+            messages: [
+              {
+                id: '1',
+                authorId: '6',
+                date: 'April 10, 2020',
+                text: `Hi James! Long time no see...`
+              },
+              {
+                id: '2',
+                authorId: '1',
+                date: 'April 14, 2020',
+                text: `Yeah, I miss you so much...`
+              }
+            ]
+          }
+        }
       ]
     }
   }
